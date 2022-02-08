@@ -1,0 +1,52 @@
+﻿@using System.Linq
+@model IEnumerable<ClientsApp.ViewModels.FounderViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Add New Founder</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            <label asp-for="@Model.First().FirstName"></label>
+        </th>
+        <th>
+            <label asp-for="@Model.First().LastName"></label>
+        </th>
+        <th>
+            <label asp-for="@Model.First().Patronymic"></label>
+        </th>
+        <th>
+            <label asp-for="@Model.First().TIN"></label>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Patronymic
+            </td>
+            <td>
+                @item.TIN
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="GetClient" asp-route-id="@item.ClientId">Client</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

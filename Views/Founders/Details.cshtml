@@ -1,0 +1,47 @@
+﻿@model ClientsApp.ViewModels.FounderViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Founder</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <label asp-for="FirstName"></label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.FirstName
+        </dd>
+        <dt class = "col-sm-2">
+            <label asp-for="LastName"></label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastName
+        </dd>
+        <dt class = "col-sm-2">
+            <label asp-for="Patronymic"></label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Patronymic
+        </dd>
+        <dt class = "col-sm-2">
+            <label asp-for="TIN"></label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.TIN
+        </dd>
+        <dt class="col-sm-2">
+            <label asp-for="ClientId"></label>
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ClientId
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="https://localhost:5001/Founders">Back</a>
+</div>
